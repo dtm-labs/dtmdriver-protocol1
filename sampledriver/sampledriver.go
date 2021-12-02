@@ -1,6 +1,9 @@
 package sample
 
-import "google.golang.org/grpc/resolver"
+import (
+	"github.com/yedf/dtmdriver"
+	"google.golang.org/grpc/resolver"
+)
 
 // 这里的sampleDriver，演示了一个的driver应当如何编写
 
@@ -19,4 +22,8 @@ func (d *sampleDriver) RegisterService(url string, endpoint string) error {
 
 func (d *sampleDriver) RegisterGrpcResolver() {
 	resolver.Register(&sampleBuilder{})
+}
+
+func init() {
+	dtmdriver.Register(&sampleDriver{})
 }
