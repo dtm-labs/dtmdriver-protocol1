@@ -18,7 +18,7 @@ func (r *nopResolver) ResolveNow(options resolver.ResolveNowOptions) {
 
 type sampleBuilder struct{}
 
-func (s *sampleBuilder) Scheme() string { return "sample" }
+func (s *sampleBuilder) Scheme() string { return "protocol1" }
 
 func (s *sampleBuilder) Build(target resolver.Target, cc resolver.ClientConn, opts resolver.BuildOptions) (resolver.Resolver, error) {
 
