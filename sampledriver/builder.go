@@ -22,7 +22,7 @@ func (s *sampleBuilder) Scheme() string { return "sample" }
 
 func (s *sampleBuilder) Build(target resolver.Target, cc resolver.ClientConn, opts resolver.BuildOptions) (resolver.Resolver, error) {
 
-	endpoint := strings.ReplaceAll(target.Endpoint, s.Scheme()+"://", "")
+	endpoint := strings.ReplaceAll(target.URL.Host, s.Scheme()+"://", "")
 	addrs := []resolver.Address{{Addr: endpoint}}
 
 	if err := cc.UpdateState(resolver.State{Addresses: addrs}); err != nil {

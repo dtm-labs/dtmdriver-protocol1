@@ -7,7 +7,9 @@ import (
 	"time"
 
 	"github.com/yedf/dtmcli/dtmimp"
+	"github.com/yedf/dtmdriver"
 	"github.com/yedf/dtmdriver-sample/sampleclient/busi"
+	_ "github.com/yedf/dtmdriver-sample/sampledriver"
 	"github.com/yedf/dtmgrpc"
 	"google.golang.org/grpc"
 )
@@ -18,6 +20,8 @@ var busiServer = fmt.Sprintf("sample://localhost:%d", busiPort)
 var dtmServer = "sample://localhost:36790"
 
 func main() {
+	drv := dtmdriver.MustGetDriver("dtm-sample-driver")
+	drv.RegisterGrpcResolver()
 	s := grpc.NewServer()
 	busi.RegisterBusiServer(s, &busi.BusiServerImp{})
 
