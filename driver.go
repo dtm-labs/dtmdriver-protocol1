@@ -9,26 +9,26 @@ import (
 	"google.golang.org/grpc/resolver"
 )
 
-// 这里的sampleDriver，演示了一个的driver应当如何编写
+// 这里的protocol1Driver，演示了一个的driver应当如何编写
 
-type sampleDriver struct {
+type protocol1Driver struct {
 }
 
-func (d *sampleDriver) GetName() string {
-	return "dtm-sample-driver"
+func (d *protocol1Driver) GetName() string {
+	return "dtm-driver-protocol1"
 }
 
-func (d *sampleDriver) RegisterGrpcService(url string, endpoint string) error {
+func (d *protocol1Driver) RegisterGrpcService(url string, endpoint string) error {
 	// 如果使用etcd，polaris等注册/发现组件的话，那么在这里，将endpoint注册到相应的url中
 	// 这里的sample仅作为演示用，没有实际注册
 	return nil
 }
 
-func (d *sampleDriver) RegisterGrpcResolver() {
+func (d *protocol1Driver) RegisterGrpcResolver() {
 	resolver.Register(&sampleBuilder{})
 }
 
-func (d *sampleDriver) ParseServerMethod(uri string) (server string, method string, err error) {
+func (d *protocol1Driver) ParseServerMethod(uri string) (server string, method string, err error) {
 	if !strings.Contains(uri, "//") { // 处理无scheme的情况，如果您没有直连，可以不处理
 		sep := strings.IndexByte(uri, '/')
 		if sep == -1 {
@@ -45,5 +45,5 @@ func (d *sampleDriver) ParseServerMethod(uri string) (server string, method stri
 }
 
 func init() {
-	dtmdriver.Register(&sampleDriver{})
+	dtmdriver.Register(&protocol1Driver{})
 }

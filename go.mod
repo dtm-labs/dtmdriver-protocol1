@@ -1,11 +1,10 @@
-module github.com/yedf/dtmdriver-sample
+module github.com/yedf/dtmdriver-protocol1
 
 go 1.15
 
 require (
-	github.com/yedf/dtmcli v1.5.1
-	github.com/yedf/dtmdriver v0.0.0-20211202083012-e340578709e1
-	github.com/yedf/dtmgrpc v1.5.1 // indirect
+	github.com/golang/protobuf v1.5.2 // indirect
+	github.com/yedf/dtmdriver v0.0.0-20211202092330-86dce681d5db
 	google.golang.org/grpc v1.42.0
-	google.golang.org/protobuf v1.27.1
+	google.golang.org/protobuf v1.27.1 // indirect
 )
