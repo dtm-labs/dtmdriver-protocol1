@@ -52,6 +52,8 @@ github.com/stretchr/testify v1.5.1/go.mod h1:5W2xD1RspED5o8YsWQXVCued0rvSQ+mT+I5
 github.com/stretchr/testify v1.7.0/go.mod h1:6Fq8oRcR53rry900zMqJjRRixrwX3KX962/h/Wwjteg=
 github.com/yedf/dtmdriver v0.0.0-20211202092330-86dce681d5db h1:Y8ZADMM3CGQ4k83FwOeDYTu7bkTGtkdboaJKhJ3HInk=
 github.com/yedf/dtmdriver v0.0.0-20211202092330-86dce681d5db/go.mod h1:aeo6ZWiVI0x8P8O18r6uB1cG2uw9BCQyYZaH15MlRDI=
+github.com/yedf/dtmdriver v0.0.0-20211203060147-29426c663b6e h1:xXyb4mr46T5KqR5SXd37ivXNJ33k/MSAAwsGP6btmh8=
+github.com/yedf/dtmdriver v0.0.0-20211203060147-29426c663b6e/go.mod h1:aeo6ZWiVI0x8P8O18r6uB1cG2uw9BCQyYZaH15MlRDI=
 go.opentelemetry.io/proto/otlp v0.7.0/go.mod h1:PqfVotwruBrMGOCsRd/89rSnXhoiJIqeYNgFYFoEGnI=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
 golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9/go.mod h1:LzIPMQfyMNhhGPhUkYOs5KpL4U8rLKemX1yGLhDgUto=
