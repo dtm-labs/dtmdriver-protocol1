@@ -20,7 +20,7 @@ func (s *sampleBuilder) Scheme() string { return "protocol1" }
 
 func (s *sampleBuilder) Build(target resolver.Target, cc resolver.ClientConn, opts resolver.BuildOptions) (resolver.Resolver, error) {
 
-	addrs := []resolver.Address{{Addr: target.Authority}}
+	addrs := []resolver.Address{{Addr: target.Endpoint}}
 
 	if err := cc.UpdateState(resolver.State{Addresses: addrs}); err != nil {
 		return nil, err
