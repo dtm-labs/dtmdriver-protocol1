@@ -1,8 +1,6 @@
 package sample
 
 import (
-	"strings"
-
 	"google.golang.org/grpc/resolver"
 )
 
@@ -22,8 +20,7 @@ func (s *sampleBuilder) Scheme() string { return "protocol1" }
 
 func (s *sampleBuilder) Build(target resolver.Target, cc resolver.ClientConn, opts resolver.BuildOptions) (resolver.Resolver, error) {
 
-	endpoint := strings.ReplaceAll(target.URL.Host, s.Scheme()+"://", "")
-	addrs := []resolver.Address{{Addr: endpoint}}
+	addrs := []resolver.Address{{Addr: target.Endpoint}}
 
 	if err := cc.UpdateState(resolver.State{Addresses: addrs}); err != nil {
 		return nil, err
