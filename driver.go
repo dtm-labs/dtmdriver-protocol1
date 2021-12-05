@@ -39,9 +39,10 @@ func (d *protocol1Driver) ParseServerMethod(uri string) (server string, method s
 	}
 	u, err := url.Parse(uri)
 	if err != nil {
-		return "", "", err
+		return "", "", nil
 	}
-	return u.Scheme + "://" + u.Host, u.Path, nil
+	index := strings.IndexByte(u.Path[1:], '/') + 1
+	return u.Scheme + "://" + u.Host + u.Path[:index], u.Path[index:], nil
 }
 
 func init() {
