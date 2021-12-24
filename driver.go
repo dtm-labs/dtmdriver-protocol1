@@ -5,7 +5,7 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/yedf/dtmdriver"
+	"github.com/dtm-labs/dtmdriver"
 	"google.golang.org/grpc/resolver"
 )
 
